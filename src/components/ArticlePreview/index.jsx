@@ -32,7 +32,7 @@ function ArticlePreview() {
             <author>Michelle Appleton</author>
             <time pubdate datetime="2020-06-28">28 Jun 2020</time>
           </div>
-          <a href="#">Share</a>
+          <a href="#share">Share</a>
         </footer>
       </article>
     </div>
