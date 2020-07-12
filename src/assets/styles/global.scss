@@ -18,5 +18,11 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 24px;
   min-height: calc(100vh - 50px); // 100% viewport height minus footer's height
+
+  @media (max-width: 552px) {
+    min-height: 667px; // height of mobile design image
+    height: calc(100vh - 70px); // 100% viewport height minus footer's height
+  }
 }

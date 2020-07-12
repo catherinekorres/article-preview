@@ -21,5 +21,10 @@
 
   & span:not([role="img"]) {
     margin-left: 15px;
+
+    @media (max-width: 552px) {
+      display: block;
+      margin-left: 0;
+    }
   }
 }
