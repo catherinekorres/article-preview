@@ -1,11 +1,12 @@
 @import 'assets/styles/colors.scss';
 
-$border-radius: 10px;
 
 .card {
+  $card-border-radius: 10px;
+
   background-color: $white;
   display: flex;
-  border-radius: $border-radius;
+  border-radius: $card-border-radius;
   box-shadow: 0px 20px 30px transparentize($grayish-blue, 0.9),
               2px 40px 30px transparentize($grayish-blue, 0.9);
 
@@ -19,7 +20,7 @@ $border-radius: 10px;
       object-fit: cover;
       object-position: left;
       filter: saturate(102%) brightness(108%) contrast(90%);
-      border-radius: $border-radius 0 0 $border-radius;
+      border-radius: $card-border-radius 0 0 $card-border-radius;
     }
   }
 
@@ -47,6 +48,9 @@ $border-radius: 10px;
 
     & footer {
       display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
 
       & .author-photo img{
         border-radius: 50%;
@@ -54,17 +58,39 @@ $border-radius: 10px;
 
       & .info {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin-left: 15px;
 
-        & author {
-          color: $dark-grayish-blue;
-          font-weight: 700;
+        & .publish-info {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          margin-left: 15px;
+
+          & author {
+            color: $dark-grayish-blue;
+            font-weight: 700;
+          }
+
+          & time {
+            color: $grayish-blue;
+          }
         }
 
-        & time {
-          color: $grayish-blue;
+      }
+
+      & button {
+        $button-dimension: 32px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: $button-dimension;
+        height: $button-dimension;
+        border: none;
+        border-radius: 50%;
+        background-color: $light-grayish-blue;
+
+        & img {
+          padding-bottom: 1px;
         }
       }
     }

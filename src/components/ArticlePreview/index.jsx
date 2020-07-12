@@ -4,6 +4,7 @@ import './styles.scss';
 
 import articleImg from 'assets/images/drawers.jpg';
 import authorPhoto from 'assets/images/avatar-michelle.jpg';
+import shareIcon from 'assets/images/icon-share.svg';
 
 function ArticlePreview() {
   return (
@@ -25,14 +26,18 @@ function ArticlePreview() {
           </p>
         </div>
         <footer>
-          <div className="author-photo">
-            <img src={authorPhoto} width="40" alt="Michelle Appleton" />
-          </div>
           <div className="info">
-            <author>Michelle Appleton</author>
-            <time pubdate datetime="2020-06-28">28 Jun 2020</time>
+            <div className="author-photo">
+              <img src={authorPhoto} width="40" alt="Michelle Appleton" />
+            </div>
+            <div className="publish-info">
+              <author>Michelle Appleton</author>
+              <time pubdate datetime="2020-06-28">28 Jun 2020</time>
+            </div>
           </div>
-          <a href="#share">Share</a>
+          <button>
+            <img src={shareIcon} alt="Share icon" />
+          </button>
         </footer>
       </article>
     </div>
