@@ -19,7 +19,7 @@
     }
   }
 
-  & span {
+  & span:not([role="img"]) {
     margin-left: 15px;
   }
 }
