@@ -1,0 +1,69 @@
+@import 'assets/styles/colors.scss';
+
+$border-radius: 10px;
+
+.card {
+  background-color: $white;
+  display: flex;
+  border-radius: $border-radius;
+  box-shadow: 5px 5px 10px  $grayish-blue;
+  max-width: 730px;
+
+  .article-img {
+    // width: 50%;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: $border-radius 0 0 $border-radius;
+    }
+  }
+
+  & article {
+    padding: 30px 40px;
+
+    & header {
+      margin-bottom: 15px;
+
+      & h1 {
+        color: $dark-grayish-blue;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 1.5;
+      }
+    }
+
+    & .article-content {
+      margin-bottom: 20px;
+      & p {
+        color: $desaturated-dark-blue;
+      }
+    }
+
+    & footer {
+      display: flex;
+
+      & .author-photo img{
+        border-radius: 50%;
+      }
+
+      & .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 20px;
+
+        & author {
+          color: $dark-grayish-blue;
+          font-weight: 700;
+        }
+
+        & time {
+          color: $grayish-blue;
+        }
+      }
+    }
+  }
+
+
+}

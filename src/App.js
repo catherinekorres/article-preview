@@ -1,25 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+// - components
+import ArticlePreview from 'components/ArticlePreview';
+import Footer from 'components/Footer';
+
+// - global styles for App
+import 'assets/styles/global.scss';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <main>
+        <ArticlePreview />
+      </main>
+      <Footer/>
+    </>
   );
 }
 

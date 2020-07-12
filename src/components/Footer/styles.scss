@@ -1,0 +1,25 @@
+@import 'assets/styles/colors.scss';
+
+.attribution {
+  background-color: $dark-grayish-blue;
+  color: $white;
+  padding: 15px 30px;
+  letter-spacing: 1.2px;
+
+  & a {
+    text-decoration: none;
+    color: $grayish-blue;
+    -webkit-transition: color .3s ease-out;
+    -moz-transition: color .3s ease-out;
+    -o-transition: color .3s ease-out;
+    transition: color .3s ease-out;
+
+    &:hover {
+      color: $light-grayish-blue;
+    }
+  }
+
+  & span {
+    margin-left: 15px;
+  }
+}
