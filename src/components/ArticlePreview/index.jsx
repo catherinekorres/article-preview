@@ -39,8 +39,8 @@ function ArticlePreview() {
               <img src={authorPhoto} width="40" alt="Michelle Appleton" />
             </div>
             <div className="publish-info">
-              <author>Michelle Appleton</author>
-              <time pubdate datetime="2020-06-28">28 Jun 2020</time>
+              <div className="author">Michelle Appleton</div>
+              <div className="time">28 Jun 2020</div>
             </div>
           </div>
           <div className="share">

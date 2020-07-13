@@ -71,12 +71,12 @@ $card-border-radius: 10px;
           justify-content: center;
           margin-left: 15px;
 
-          & author {
+          & .author {
             color: $dark-grayish-blue;
             font-weight: 700;
           }
 
-          & time {
+          & .time {
             color: $grayish-blue;
           }
         }
