@@ -2,6 +2,13 @@
 
 $card-border-radius: 10px;
 
+@mixin transition($seconds) {
+  -webkit-transition: all $seconds ease-out;
+  -moz-transition: all $seconds ease-out;
+  -o-transition: all $seconds ease-out;
+  transition: all $seconds ease-out;
+}
+
 .card {
   background-color: $white;
   display: flex;
@@ -76,20 +83,82 @@ $card-border-radius: 10px;
 
       }
 
-      & button {
-        $button-dimension: 32px;
-
+      & .share {
+        position: relative;
         display: flex;
-        align-items: center;
         justify-content: center;
-        width: $button-dimension;
-        height: $button-dimension;
-        border: none;
-        border-radius: 50%;
-        background-color: $light-grayish-blue;
 
-        & img {
-          padding-bottom: 1px;
+        & button {
+          $button-dimension: 32px;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: $button-dimension;
+          height: $button-dimension;
+          border: none;
+          border-radius: 50%;
+          background-color: $light-grayish-blue;
+          @include transition(.3s);
+          z-index: 5;
+
+          & img {
+            padding-bottom: 1px;
+          }
+
+          &.focused {
+            background-color: $desaturated-dark-blue;
+
+            & img  {
+              fill: $white;
+            }
+          }
+        }
+
+        & .tooltip {
+          position: absolute;
+          top: -82px;
+          background-color: $dark-grayish-blue;
+          color: $white;
+          padding: 17px 38px;
+          border-radius: $card-border-radius;
+          display: flex;
+          align-items: center;
+          visibility: hidden;
+          opacity: 0;
+          @include transition(.5s);
+          z-index: 1;
+
+          &.active {
+            visibility: visible;
+            opacity: 1;
+          }
+
+          &::after {
+            $triangle-size: 11px;
+
+            content: '';
+            position: absolute;
+            bottom: calc(-#{$triangle-size} + 1px);
+            left: calc(50% - #{$triangle-size});
+            border-left: $triangle-size solid transparent;
+            border-right: $triangle-size solid transparent;
+            border-top: $triangle-size solid $dark-grayish-blue;
+          }
+
+          & span {
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: $grayish-blue;
+          }
+
+          & .social {
+            display: flex;
+             & a {
+                margin-left: 16px;
+             }
+          }
+
         }
       }
     }
@@ -115,6 +184,7 @@ $card-border-radius: 10px;
 
     & article {
       padding: 36px 33px 20px;
+      position: relative;
 
       & header {
         margin-bottom: 13px;
@@ -127,6 +197,29 @@ $card-border-radius: 10px;
       & .article-content {
         margin-bottom: 31px;
       }
+
+      & footer {
+        align-items: flex-end;
+        & .share {
+          position: static;
+          & .tooltip {
+            padding: 25px 36px;
+            top: unset;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            border-radius: 0 0 $card-border-radius $card-border-radius;
+
+            &::after {
+              display: none;
+            }
+          }
+        }
+      }
+
+
     }
+
+
   }
 }

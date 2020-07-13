@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import './styles.scss';
 
 import articleImg from 'assets/images/drawers.jpg';
 import authorPhoto from 'assets/images/avatar-michelle.jpg';
-import shareIcon from 'assets/images/icon-share.svg';
+import facebook from 'assets/images/icon-facebook.svg';
+import twitter from 'assets/images/icon-twitter.svg';
+import pinterest from 'assets/images/icon-pinterest.svg';
 
 function ArticlePreview() {
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    console.log(open);
+  }, [open]);
+
   return (
     <div className="card">
       <div className="article-img">
@@ -35,9 +43,25 @@ function ArticlePreview() {
               <time pubdate datetime="2020-06-28">28 Jun 2020</time>
             </div>
           </div>
-          <button>
-            <img src={shareIcon} alt="Share icon" />
-          </button>
+          <div className="share">
+            <button className={open ? 'focused' : ''} onClick={() => setOpen(!open)}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13"><path fill={open ? '#fff' : '#6E8098'} d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"/></svg>
+            </button>
+            <div className={open ? 'tooltip active' : 'tooltip'}>
+              <span>Share</span>
+              <div className="social">
+                <a href="#facebook">
+                  <img src={facebook} alt="Facebook" />
+                </a>
+                <a href="#twitter">
+                  <img src={twitter} alt="Twitter" />
+                </a>
+                <a href="#pinterest">
+                  <img src={pinterest} alt="Pinterest" />
+                </a>
+              </div>
+            </div>
+          </div>
         </footer>
       </article>
     </div>
